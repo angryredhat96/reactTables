@@ -2,7 +2,15 @@ import React from 'react';
 import './Table.css';
 
 export default function Table({ data, cell }) {
-  const colNum = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25'];
+  const colNum = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20'];
+  const repeatCell = function foo() {
+    const arr = [];
+    for (let i = 0; i < data.length; i += 1) {
+      arr.push(cell);
+    }
+    return arr;
+  };
+
   return (
     <div className="scroll-table">
       <table>
@@ -19,31 +27,7 @@ export default function Table({ data, cell }) {
             {colNum.map((el) => (
               <tr>
                 <td className="head-col">{el}</td>
-                <td>{cell}</td>
-                <td>{cell}</td>
-                <td>{cell}</td>
-                <td>{cell}</td>
-                <td>{cell}</td>
-                <td>{cell}</td>
-                <td>{cell}</td>
-                <td>{cell}</td>
-                <td>{cell}</td>
-                <td>{cell}</td>
-                <td>{cell}</td>
-                <td>{cell}</td>
-                <td>{cell}</td>
-                <td>{cell}</td>
-                <td>{cell}</td>
-                <td>{cell}</td>
-                <td>{cell}</td>
-                <td>{cell}</td>
-                <td>{cell}</td>
-                <td>{cell}</td>
-                <td>{cell}</td>
-                <td>{cell}</td>
-                <td>{cell}</td>
-                <td>{cell}</td>
-                <td>{cell}</td>
+                {repeatCell().map((elem) => <td>{elem}</td>)}
               </tr>
             ))}
           </tbody>
