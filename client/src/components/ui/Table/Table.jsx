@@ -2,7 +2,7 @@ import React from 'react';
 import './Table.css';
 
 export default function Table({ data, cell }) {
-  const colNum = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20'];
+  const rowNum = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20'];
   const repeatCell = function foo() {
     const arr = [];
     for (let i = 0; i < data.length; i += 1) {
@@ -24,7 +24,7 @@ export default function Table({ data, cell }) {
       <div className="scroll-table-body">
         <table>
           <tbody>
-            {colNum.map((el) => (
+            {rowNum.map((el) => (
               <tr>
                 <td className="head-col">{el}</td>
                 {repeatCell().map((elem) => <td>{elem}</td>)}
